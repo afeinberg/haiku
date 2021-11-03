@@ -50,19 +50,19 @@ private:
 	int32 EscParse();
 	int32 PtyReader();
 
-	void DumpState(int *groundtable, int *parsestate, uchar c);
+	void DumpState(int* groundtable, int* parsestate, uchar c); __cpp_attributes(_Noreturn);
 
 	static int32 _ptyreader_thread(void *);
 	static int32 _escparse_thread(void *);
 
 	status_t _ReadParserBuffer();
 
-	void _DeviceStatusReport(int n);
-	void _DecReqTermParms(int value);
-	void _DecPrivateModeSet(int value);
-	void _DecPrivateModeReset(int value);
+	void _DeviceStatusReport(int n) __cpp_attributes(_Noreturn);
+	void _DecReqTermParms(int value) __cpp_attributes(_Noreturn);
+	void _DecPrivateModeSet(int value) __cpp_attributes(_Noreturn);
+	void _DecPrivateModeReset(int value) __cpp_attributes(_Noreturn);
 	int* _GuessGroundTable(int encoding);
-	void _ProcessOperatingSystemControls(uchar* params);
+	void _ProcessOperatingSystemControls(uchar* params) __cpp_attributes(_Noreturn);
 
 	int fFd;
 
